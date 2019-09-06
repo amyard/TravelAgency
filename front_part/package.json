@@ -1,0 +1,20 @@
+{
+  "name": "TravelAgency",
+  "version": "1.0.0",
+  "description": "Travel Agency WebSite",
+  "main": "index.js",
+  "scripts": {
+    "watch:base-sass": "node-sass sass/main.scss css/main.css -w",
+    "devserver": "live-server --browser=firefox",
+    "start": "npm-run-all --parallel devserver watch:base-sass"
+  },
+  "author": "amyard / delme",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.1.4",
+    "concat": "^1.0.3",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.1.1",
+    "postcss-cli": "^4.1.1"
+  }
+}

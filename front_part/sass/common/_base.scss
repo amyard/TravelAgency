@@ -1,0 +1,25 @@
+$color-black: #000;
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+$color-grey-light-3: #f3f4f4;
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.container {
+    display: grid;
+    grid-template-rows:repeat(12, min-content); 
+    grid-template-columns:[left-extra-start] 10vh [left-extra-end center-start] minmax(10rem, 1fr) [center-end right-extra-start] 10vh [right-extra-end];  
+}
+
