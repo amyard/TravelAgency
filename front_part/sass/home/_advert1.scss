@@ -1,78 +1,223 @@
+// .advert-1 {
+//     background-color: $color-grey-light-3;
+//     display: grid;
+//     grid-column: center-start / center-end;
+//     // grid-template-columns: 60% 40%;
+//     grid-template-columns: repeat(16, fr);
+//     grid-template-rows: repeat(8, 1fr);
+//     min-height: 38rem;
+//     max-height: 44rem;
+
+//     &__img {
+//         grid-row: 1 / -1;
+//         grid-column: 1 / 10;
+//         img {
+//             object-fit: cover; // need height and width
+//             display: block;
+//             width: 100%;
+//             height: 100%;
+//         }
+//     }
+
+//     &__content {
+//         grid-row: 2 / 8;
+//         grid-column: 10 / 16;
+//         background-color:#282b2e;
+//         color: #fff;
+//         padding: 4rem 2rem;
+
+//         // &--description {
+
+//         // }
+
+//         // &--title {
+
+//         // }
+
+//         &--btn {
+//             text-transform: uppercase;
+//             background-color:#282b2e;
+//             border: 2px solid #ddae71;
+//             color: #fff;
+//             padding: 1.5rem 3rem;
+//             font-size: 1.5rem;
+//             position: relative;
+//         }
+
+//         ////////////////////////////////////////////////////////////////////////////////
+//         &--btn::before {
+//             content: '';
+//             position: absolute;
+//             top: 0;
+//             left: 0;
+//             height: 100%;
+//             width: 3px;
+//             background-color: #ddae71;
+//             color: #282b2e;
+//             transform: scaleY(0);
+    
+//             transition: transform .2s,
+//                         width .4s cubic-bezier(1, 0, 0, 1) .2s,
+//                         background-color .1s;
+//         }
+    
+//         &--btn:hover::before {
+//             transform: scaleY(1);
+//             width: 100%;
+//         }
+    
+//         &--btn:active::before {
+//             background-color: #ddae71;
+//             color: #282b2e;
+//         }
+
+//         // &--btn:hover {
+//         //     color: #282b2e;
+//         // }
+//     }
+// }
+
+$color-black-main: #282b2e;
+$color-yellow-main: #ddae71;
+
+%btn-slider {
+    font-size: 3rem;
+    cursor: pointer;
+    background-color: $color-black-main;
+    color: $color-yellow-main;    
+    border-bottom: 1px solid $color-yellow-main;
+    border-top: 1px solid$color-yellow-main; 
+    display: flex;
+    justify-content: center;
+}
+
+
+
 .advert-1 {
     background-color: $color-grey-light-3;
     display: grid;
     grid-column: center-start / center-end;
-    // grid-template-columns: 60% 40%;
-    grid-template-columns: repeat(16, fr);
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(13, 1fr);
     min-height: 38rem;
     max-height: 44rem;
+    transition: all 0.5s ease;
 
-    &__img {
-        grid-row: 1 / -1;
-        grid-column: 1 / 10;
-        img {
-            object-fit: cover; // need height and width
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
+    .prev {
+        grid-row: 12/13;
+        grid-column: 12/13;
+        @extend %btn-slider;
+        border-left: 1px solid $color-yellow-main;
     }
 
-    &__content {
-        grid-row: 2 / 8;
-        grid-column: 10 / 16;
-        background-color:#282b2e;
-        color: #fff;
-        padding: 4rem 2rem;
+    .next {
+        grid-row: 12/13;
+        grid-column: 13/14;
+        @extend %btn-slider;
+        border-right: 1px solid $color-yellow-main; 
+    }
 
-        // &--description {
+    &__slider {
+        grid-row: 1/14;
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(16, 1fr);
+        grid-template-rows: repeat(14, 1fr);
+        // transition: display .3s ease;
 
-        // }
+        &--img {
+            grid-row: 1 / -1;
+            grid-column: 1 / 12 ;
 
-        // &--title {
+            img {
+                object-fit: cover; // need height and width
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
 
-        // }
-
-        &--btn {
-            text-transform: uppercase;
-            background-color:#282b2e;
-            border: 2px solid #ddae71;
+        &__content {
+            grid-row: 3 / 13;
+            grid-column: 10 / 16;
+            background-color:$color-black-main;
             color: #fff;
-            padding: 1.5rem 3rem;
-            font-size: 1.5rem;
-            position: relative;
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////
-        &--btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+            padding: 4rem 4rem; 
             height: 100%;
-            width: 3px;
-            background-color: #ddae71;
-            color: #282b2e;
-            transform: scaleY(0);
-    
-            transition: transform .2s,
-                        width .4s cubic-bezier(1, 0, 0, 1) .2s,
-                        background-color .1s;
-        }
-    
-        &--btn:hover::before {
-            transform: scaleY(1);
             width: 100%;
-        }
-    
-        &--btn:active::before {
-            background-color: #ddae71;
-            color: #282b2e;
-        }
+            object-fit: cover; 
 
-        // &--btn:hover {
-        //     color: #282b2e;
-        // }
+            &--description {
+                font-size: 1.4rem;
+                margin-bottom: 5%
+            }
+    
+            &--title {
+                font-size: 3.2rem;
+                margin-bottom: 5%
+            }
+        
+            &--btn {
+                text-transform: uppercase;
+                background-color:$color-black-main;
+                border: 2px solid $color-yellow-main;
+                color: #fff;
+                padding: 1.5rem 3rem;
+                font-size: 1.5rem;
+                position: relative;
+            }
+        
+            ////////////////////////////////////////////////////////////////////////////////
+            &--btn::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 3px;
+                background-color: $color-yellow-main;
+                color: #282b2e;
+                transform: scaleY(0);
+        
+                transition: transform .2s,
+                            width .4s cubic-bezier(1, 0, 0, 1) .2s,
+                            background-color .1s,
+                            color .1s;
+            }
+        
+            &--btn:hover::before {
+                transform: scaleY(1);
+                width: 100%;
+                color: #282b2e;
+            }
+        
+            &--btn:active::before {
+                background-color: $color-yellow-main;
+                color: $color-black-main;
+            }    
+        }    
+    }
+
+    .slider-btn {
+        grid-row: 13/14;
+        grid-column: 1 / 2;
+        justify-content: center;
+        
+
+        &__dot {
+            cursor: pointer;
+            height: 25px;
+            width: 25px;
+            margin: 0 2px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: inline-block;
+            border: 1px solid $color-black-main;
+            transition: background-color 0.6s ease;
+
+            &:hover {
+                background-color: #717171;
+            }
+        }
     }
 }

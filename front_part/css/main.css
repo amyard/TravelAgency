@@ -26,53 +26,104 @@ html {
 .adventage {
   background-color: aquamarine; }
 
+.advert-1 .prev, .advert-1 .next {
+  font-size: 3rem;
+  cursor: pointer;
+  background-color: #282b2e;
+  color: #ddae71;
+  border-bottom: 1px solid #ddae71;
+  border-top: 1px solid #ddae71;
+  display: flex;
+  justify-content: center; }
+
 .advert-1 {
   background-color: #f3f4f4;
   display: grid;
   grid-column: center-start / center-end;
-  grid-template-columns: repeat(16, fr);
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(13, 1fr);
   min-height: 38rem;
-  max-height: 44rem; }
-  .advert-1__img {
-    grid-row: 1 / -1;
-    grid-column: 1 / 10; }
-    .advert-1__img img {
-      object-fit: cover;
-      display: block;
-      width: 100%;
-      height: 100%; }
-  .advert-1__content {
-    grid-row: 2 / 8;
-    grid-column: 10 / 16;
-    background-color: #282b2e;
-    color: #fff;
-    padding: 4rem 2rem; }
-    .advert-1__content--btn {
-      text-transform: uppercase;
+  max-height: 44rem;
+  transition: all 0.5s ease; }
+  .advert-1 .prev {
+    grid-row: 12/13;
+    grid-column: 12/13;
+    border-left: 1px solid #ddae71; }
+  .advert-1 .next {
+    grid-row: 12/13;
+    grid-column: 13/14;
+    border-right: 1px solid #ddae71; }
+  .advert-1__slider {
+    grid-row: 1/14;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(14, 1fr); }
+    .advert-1__slider--img {
+      grid-row: 1 / -1;
+      grid-column: 1 / 12; }
+      .advert-1__slider--img img {
+        object-fit: cover;
+        display: block;
+        width: 100%;
+        height: 100%; }
+    .advert-1__slider__content {
+      grid-row: 3 / 13;
+      grid-column: 10 / 16;
       background-color: #282b2e;
-      border: 2px solid #ddae71;
       color: #fff;
-      padding: 1.5rem 3rem;
-      font-size: 1.5rem;
-      position: relative; }
-    .advert-1__content--btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
+      padding: 4rem 4rem;
       height: 100%;
-      width: 3px;
-      background-color: #ddae71;
-      color: #282b2e;
-      transform: scaleY(0);
-      transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s; }
-    .advert-1__content--btn:hover::before {
-      transform: scaleY(1);
-      width: 100%; }
-    .advert-1__content--btn:active::before {
-      background-color: #ddae71;
-      color: #282b2e; }
+      width: 100%;
+      object-fit: cover; }
+      .advert-1__slider__content--description {
+        font-size: 1.4rem;
+        margin-bottom: 5%; }
+      .advert-1__slider__content--title {
+        font-size: 3.2rem;
+        margin-bottom: 5%; }
+      .advert-1__slider__content--btn {
+        text-transform: uppercase;
+        background-color: #282b2e;
+        border: 2px solid #ddae71;
+        color: #fff;
+        padding: 1.5rem 3rem;
+        font-size: 1.5rem;
+        position: relative; }
+      .advert-1__slider__content--btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 3px;
+        background-color: #ddae71;
+        color: #282b2e;
+        transform: scaleY(0);
+        transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s, color 0.1s; }
+      .advert-1__slider__content--btn:hover::before {
+        transform: scaleY(1);
+        width: 100%;
+        color: #282b2e; }
+      .advert-1__slider__content--btn:active::before {
+        background-color: #ddae71;
+        color: #282b2e; }
+  .advert-1 .slider-btn {
+    grid-row: 13/14;
+    grid-column: 1 / 2;
+    justify-content: center; }
+    .advert-1 .slider-btn__dot {
+      cursor: pointer;
+      height: 25px;
+      width: 25px;
+      margin: 0 2px;
+      background-color: #fff;
+      border-radius: 50%;
+      display: inline-block;
+      border: 1px solid #282b2e;
+      transition: background-color 0.6s ease; }
+      .advert-1 .slider-btn__dot:hover {
+        background-color: #717171; }
 
 .advert-2 {
   background-color: goldenrod; }

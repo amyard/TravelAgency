@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Travel With Us</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/slick.css">
 </head>
 <body class="container">
     
@@ -17,16 +18,78 @@
     </header>
 
     <section class="advert-1">
+
+        <div class="advert-1__slider fade">
+            <div class="advert-1__slider--img">
+                <img src="img/japan_slider.jpg" alt="">
+            </div>
+            <div class="advert-1__slider__content">
+                <p class="advert-1__slider__content--description">Цветение сукуры</p>
+                <h1 class="advert-1__slider__content--title">Роскошная Японии</h1>
+                <button class="advert-1__slider__content--btn">Побробнее</button>
+            </div>
+        </div>
+        <div class="advert-1__slider fade">
+            <div class="advert-1__slider--img">
+                <img src="img/geor2.jpeg" alt="">
+            </div>
+            <div class="advert-1__slider__content">
+                <p class="advert-1__slider__content--description">Хачапури и Горы</p>
+                <h1 class="advert-1__slider__content--title">Божественная Грузия</h1>
+                <button class="advert-1__slider__content--btn">Побробнее</button>
+            </div>
+        </div>
+        <div class="advert-1__slider fade">
+            <div class="advert-1__slider--img">
+                <img src="img/valencia.jpg" alt="">
+            </div>
+            <div class="advert-1__slider__content">
+                <p class="advert-1__slider__content--description">Она шикарна</p>
+                <h1 class="advert-1__slider__content--title">Валенсия</h1>
+                <button class="advert-1__slider__content--btn">Побробнее</button>
+            </div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>   
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <div class="slider-btn"style="text-align:center">
+            <span class="slider-btn__dot" onclick="currentSlide(1)"></span> 
+            <span class="slider-btn__dot" onclick="currentSlide(2)"></span> 
+            <span class="slider-btn__dot" onclick="currentSlide(3)"></span> 
+        </div>
+            
+    </section>
+
+    <!-- <section class="advert-1">
         <div class="advert-1__img">
             <img src="img/japan_slider.jpg" alt="">
         </div>
-
         <div class="advert-1__content">
             <p class="advert-1__content--description">Цветение сукуры</p>
             <h1 class="advert-1__content--title">Роскошная Японии</h1>
             <button class="advert-1__content--btn">Побробнее</button>
         </div>
-    </section>
+
+        <div class="advert-1__img">
+            <img src="img/japan_slider.jpg" alt="">
+        </div>
+        <div class="advert-1__content">
+            <p class="advert-1__content--description">Цветение сукуры 2</p>
+            <h1 class="advert-1__content--title">Роскошная Японии 2</h1>
+            <button class="advert-1__content--btn">Побробнее</button>
+        </div>
+
+        <div class="advert-1__img">
+            <img src="img/japan_slider.jpg" alt="">
+        </div>
+        <div class="advert-1__content">
+            <p class="advert-1__content--description">Цветение сукуры 3</p>
+            <h1 class="advert-1__content--title">Роскошная Японии 3</h1>
+            <button class="advert-1__content--btn">Побробнее</button>
+        </div>
+            
+    </section> -->
 
     <section class="calculator">
         Form section
@@ -158,6 +221,36 @@
     </footer>
 
 
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
 
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("advert-1__slider");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex-1].style.transition = "all .3s";
+            slides[slideIndex-1].style.display = "grid";
+            dots[slideIndex-1].className += " active";
+        }
+
+    </script>
 </body>
 </html>
