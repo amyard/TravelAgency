@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Travel With Us</title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/slick.css">
 </head>
 <body class="container">
     
@@ -76,14 +75,112 @@
     </section>
 
     <section class="travel-proposition">
-        Куда поехать
+        LALALALAL
     </section>
 
     <section class="advert-2">
-        Какие-то туры
+        <div class="advert-2__slider">
+            <div class="advert-2__slider--img">
+                <img src="img/weeding-tour.jpg" alt="">
+            </div>
+            <div class="advert-2__slider__content">
+                <h1 class="advert-2__slider__content--title">Свадебные туры</h1>
+                <p class="advert-2__slider__content--span">Каждый день отдыха станет для Вас особенным</p>
+                <ul class="advert-2__slider__content--list">
+                    <li class="advert-2__slider__content--list-item">
+                        <svg>
+                            <use xlink:href="img/symbol-defs.svg#icon-checkmark"></use>
+                        </svg>
+                        <span>Романтические путишествия за рубежом</span>
+                    </li>
+                    <li class="advert-2__slider__content--list-item">
+                        <svg>
+                            <use xlink:href="img/symbol-defs.svg#icon-checkmark"></use>
+                        </svg>
+                        <span>Организация и офрмление свадебной церемонии</span>
+                    </li>
+                    <li class="advert-2__slider__content--list-item">
+                        <svg>
+                            <use xlink:href="img/symbol-defs.svg#icon-checkmark"></use>
+                        </svg>
+                        <span>Выбор идеального места для медового месяца</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="advert-2__slider">
+            <div class="advert-2__slider--img">
+                <img src="img/ekskyr-tour.jpg" alt="">
+            </div>
+            <div class="advert-2__slider__content">
+                <h1 class="advert-2__slider__content--title">Экскурсионные туры</h1>
+                <p class="advert-2__slider__content--span">Каждый день отдыха станет для Вас особенным</p>
+                <ul class="advert-2__slider__content--list">
+                    <li class="advert-2__slider__content--list-item">
+                        <svg>
+                            <use xlink:href="img/symbol-defs.svg#icon-checkmark"></use>
+                        </svg>
+                        <span>Романтические путишествия за рубежом</span>
+                    </li>
+                    <li class="advert-2__slider__content--list-item">
+                        <svg>
+                            <use xlink:href="img/symbol-defs.svg#icon-checkmark"></use>
+                        </svg>
+                        <span>Организация и офрмление свадебной церемонии</span>
+                    </li>
+                    <li class="advert-2__slider__content--list-item">
+                        <svg>
+                            <use xlink:href="img/symbol-defs.svg#icon-checkmark"></use>
+                        </svg>
+                        <span>Выбор идеального места для медового месяца</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="advert-2__slider">
+            <div class="advert-2__slider--img">
+                <img src="img/mount-travel.jpg" alt="">
+            </div>
+            <div class="advert-2__slider__content">
+                <h1 class="advert-2__slider__content--title">Week-end туры</h1>
+                <p class="advert-2__slider__content--span">Каждый день отдыха станет для Вас особенным</p>
+                <ul class="advert-2__slider__content--list">
+                    <li class="advert-2__slider__content--list-item">
+                        <svg>
+                            <use xlink:href="img/symbol-defs.svg#icon-checkmark"></use>
+                        </svg>
+                        <span>Романтические путишествия за рубежом</span>
+                    </li>
+                    <li class="advert-2__slider__content--list-item">
+                        <svg>
+                            <use xlink:href="img/symbol-defs.svg#icon-checkmark"></use>
+                        </svg>
+                        <span>Организация и офрмление свадебной церемонии</span>
+                    </li>
+                    <li class="advert-2__slider__content--list-item">
+                        <svg>
+                            <use xlink:href="img/symbol-defs.svg#icon-checkmark"></use>
+                        </svg>
+                        <span>Выбор идеального места для медового месяца</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <a class="prev" onclick="plusSlidesAdv(-1)">&#10094;</a>   
+        <a class="next" onclick="plusSlidesAdv(1)">&#10095;</a>
+
+        <div class="slider-btn">
+            <span class="slider-btn__dot" onclick="currentSlideAdv(1)"></span> 
+            <span class="slider-btn__dot" onclick="currentSlideAdv(2)"></span> 
+            <span class="slider-btn__dot" onclick="currentSlideAdv(3)"></span> 
+        </div>
     </section>
 
     <section class="popular-tours">
+        <h1 class="popular-tours__title">Popular Tours</h1>
             
         <div class="popular-tour">
             <img src="img/Georgia.jpg" alt="" class="popular-tour__img">
@@ -201,36 +298,7 @@
     </footer>
 
 
-    <script>
-        var slideIndex = 1;
-        showSlides(slideIndex);
 
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("advert-1__slider");
-            var dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1}    
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-
-            slides[slideIndex-1].style.transition = "all .3s";
-            slides[slideIndex-1].style.display = "grid";
-            dots[slideIndex-1].className += " active";
-        }
-
-    </script>
+    <script src="js/slider_custom.js"></script>
 </body>
 </html>

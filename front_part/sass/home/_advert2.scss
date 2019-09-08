@@ -1,3 +1,101 @@
+%btn-slider-adverd {
+    font-size: 3rem;
+    cursor: pointer;
+    color: $color-yellow-main;    
+    display: flex;
+}
+
+
 .advert-2 {
-    background-color: goldenrod;
+    display: grid;
+    grid-column: center-start / center-end;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(13, 1fr);
+    min-height: 25rem;
+    max-height: 35rem;
+    transition: all 0.5s ease;
+    background-color: #f3f4f4;
+
+    .prev {
+        grid-row: 7/8;
+        grid-column: 2/3;
+        @extend %btn-slider-adverd;
+        justify-content: end;
+        padding-right: 15%;
+    }
+
+    .next {
+        grid-row: 7/8;
+        grid-column: 15/16;
+        @extend %btn-slider-adverd;
+        justify-content: start;
+        padding-left: 15%;
+    }
+
+    &__slider {
+        grid-row: 1/14;
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(16, 1fr);
+        grid-template-rows: repeat(14, 1fr);
+
+        &--img {
+            grid-row: 3/ 13;
+            grid-column: 3 / 10 ;
+
+            img {
+                object-fit: fill;
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &__content {
+            grid-row: 4 / 14;
+            grid-column: 9 / 15;
+            padding: 4rem 4rem; 
+            height: 100%;
+            width: 100%;
+            object-fit: cover; 
+            background-color: #fff;
+
+            &--title {
+                font-size: 2.5rem;
+                margin-bottom: 3%;
+                color: $color-black-main;
+                cursor: pointer;
+                transition: all .5s;
+
+                &:hover {
+                    color: $color-yellow-main;
+                }
+            }
+
+            &--span {
+                color: #c8cacb;
+            }
+
+            &--list {
+                list-style: none;
+                margin-top: 10%;
+
+                &-item {
+                    display: grid;
+                    grid-template-columns: 10vh 1fr;
+                    margin-bottom: 2%;
+                
+                    svg {
+                        fill: #55c57a;
+                        height: 1rem;
+                    }
+
+                    span {
+                        color: $color-black-main;
+                    }
+                }
+            }
+
+        }    
+    }
 }

@@ -15,7 +15,8 @@ html {
   grid-template-columns: [left-extra-start] 10vh [left-extra-end center-start] minmax(10rem, 1fr) [center-end right-extra-start] 10vh [right-extra-end]; }
 
 .footer {
-  background-color: khaki; }
+  background-color: khaki;
+  grid-column: center-start / center-end; }
 
 .header {
   display: grid;
@@ -39,7 +40,7 @@ html {
     .header__menu--item {
       border: 1px solid #ddae71;
       align-self: center;
-      padding: 1rem 2.5rem;
+      padding: .8rem 1.2rem;
       background-color: #282b2e;
       color: #fff; }
       .header__menu--item:hover {
@@ -75,14 +76,14 @@ html {
   justify-content: center; }
 
 .advert-1 {
-  background-color: #e8e8e8;
   display: grid;
   grid-column: center-start / center-end;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(13, 1fr);
   min-height: 38rem;
   max-height: 44rem;
-  transition: all 0.5s ease; }
+  transition: all 0.5s ease;
+  background-color: #e8e8e8; }
   .advert-1 .prev {
     grid-row: 12/13;
     grid-column: 12/13;
@@ -163,8 +164,75 @@ html {
       .advert-1 .slider-btn__dot:hover {
         background-color: #717171; }
 
+.advert-2 .prev, .advert-2 .next {
+  font-size: 3rem;
+  cursor: pointer;
+  color: #ddae71;
+  display: flex; }
+
 .advert-2 {
-  background-color: goldenrod; }
+  display: grid;
+  grid-column: center-start / center-end;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(13, 1fr);
+  min-height: 25rem;
+  max-height: 35rem;
+  transition: all 0.5s ease;
+  background-color: #f3f4f4; }
+  .advert-2 .prev {
+    grid-row: 7/8;
+    grid-column: 2/3;
+    justify-content: end;
+    padding-right: 15%; }
+  .advert-2 .next {
+    grid-row: 7/8;
+    grid-column: 15/16;
+    justify-content: start;
+    padding-left: 15%; }
+  .advert-2__slider {
+    grid-row: 1/14;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(14, 1fr); }
+    .advert-2__slider--img {
+      grid-row: 3/ 13;
+      grid-column: 3 / 10; }
+      .advert-2__slider--img img {
+        object-fit: fill;
+        display: block;
+        width: 100%;
+        height: 100%; }
+    .advert-2__slider__content {
+      grid-row: 4 / 14;
+      grid-column: 9 / 15;
+      padding: 4rem 4rem;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      background-color: #fff; }
+      .advert-2__slider__content--title {
+        font-size: 2.5rem;
+        margin-bottom: 3%;
+        color: #282b2e;
+        cursor: pointer;
+        transition: all .5s; }
+        .advert-2__slider__content--title:hover {
+          color: #ddae71; }
+      .advert-2__slider__content--span {
+        color: #c8cacb; }
+      .advert-2__slider__content--list {
+        list-style: none;
+        margin-top: 10%; }
+        .advert-2__slider__content--list-item {
+          display: grid;
+          grid-template-columns: 10vh 1fr;
+          margin-bottom: 2%; }
+          .advert-2__slider__content--list-item svg {
+            fill: #55c57a;
+            height: 1rem; }
+          .advert-2__slider__content--list-item span {
+            color: #282b2e; }
 
 .calculator {
   background-color: blanchedalmond; }
@@ -176,12 +244,19 @@ html {
   background-color: thistle; }
 
 .popular-tours {
-  background-color: #f9f7f6;
-  margin: 10rem 0;
+  padding-bottom: 5rem;
+  padding-top: 3rem;
   display: grid;
   grid-column: center-start / center-end;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   grid-gap: 5rem; }
+  .popular-tours__title {
+    color: #282b2e;
+    text-decoration: underline;
+    font-style: italic;
+    grid-column: 1/-1;
+    text-align: center;
+    font-size: 3rem; }
 
 .popular-tour {
   display: grid;
@@ -247,4 +322,11 @@ html {
     width: 100%; }
 
 .travel-proposition {
-  background-color: rebeccapurple; }
+  background-color: yellowgreen;
+  max-height: 20rem;
+  height: 20rem;
+  display: grid;
+  grid-column: center-start / center-end;
+  grid-template-rows: 10% 1fr 10%; }
+  .travel-proposition img {
+    background-size: cover; }

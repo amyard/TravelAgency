@@ -1,3 +1,13 @@
 .travel-proposition {
-    background-color: rebeccapurple;
+    background-color: yellowgreen;
+    max-height: 20rem;
+    height: 20rem;
+
+    display: grid;
+    grid-column: center-start / center-end;
+    grid-template-rows: 10% 1fr 10%;
+
+    img {
+        background-size: cover;
+    }
 }
