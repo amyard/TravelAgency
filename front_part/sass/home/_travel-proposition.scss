@@ -1,13 +1,51 @@
 .travel-proposition {
-    background-color: yellowgreen;
-    max-height: 20rem;
-    height: 20rem;
-
     display: grid;
     grid-column: center-start / center-end;
-    grid-template-rows: 10% 1fr 10%;
+    grid-template-rows: 15vh repeat(2, 1fr) 5vh;
+    grid-template-columns: repeat(3, 1fr);
 
-    img {
-        background-size: cover;
+    &__title {
+        color: $color-black-main;
+        text-decoration: underline;
+        font-style: italic;
+        grid-column: 1/-1;
+        text-align: center;
+        font-size: 3rem;
+        padding: 2rem 0rem;
     }
+
+    &__item {
+        display: grid;
+
+        &-img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+            grid-column: 1/3;
+            grid-row: 1/8;
+            z-index: 1;
+
+            &-down {
+                transform: translateY(1rem);
+            }
+        }
+
+        &--name {
+            font-size: 3.5rem;
+            color: #fff;
+            text-shadow: 0 0rem 2.5rem $color-black-main;
+            text-align: end;
+            grid-row: 6/7;
+            grid-column: 2/3;
+            margin-right: 2.5rem;
+            z-index: 3;
+            cursor: pointer;
+            transition: all .5s;
+
+            &:hover {
+                color: $color-yellow-main;
+            }
+        }
+    }
+
 }

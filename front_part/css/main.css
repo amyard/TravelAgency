@@ -322,11 +322,39 @@ html {
     width: 100%; }
 
 .travel-proposition {
-  background-color: yellowgreen;
-  max-height: 20rem;
-  height: 20rem;
   display: grid;
   grid-column: center-start / center-end;
-  grid-template-rows: 10% 1fr 10%; }
-  .travel-proposition img {
-    background-size: cover; }
+  grid-template-rows: 15vh repeat(2, 1fr) 5vh;
+  grid-template-columns: repeat(3, 1fr); }
+  .travel-proposition__title {
+    color: #282b2e;
+    text-decoration: underline;
+    font-style: italic;
+    grid-column: 1/-1;
+    text-align: center;
+    font-size: 3rem;
+    padding: 2rem 0rem; }
+  .travel-proposition__item {
+    display: grid; }
+    .travel-proposition__item-img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      grid-column: 1/3;
+      grid-row: 1/8;
+      z-index: 1; }
+      .travel-proposition__item-img-down {
+        transform: translateY(1rem); }
+    .travel-proposition__item--name {
+      font-size: 3.5rem;
+      color: #fff;
+      text-shadow: 0 0rem 2.5rem #282b2e;
+      text-align: end;
+      grid-row: 6/7;
+      grid-column: 2/3;
+      margin-right: 2.5rem;
+      z-index: 3;
+      cursor: pointer;
+      transition: all .5s; }
+      .travel-proposition__item--name:hover {
+        color: #ddae71; }
