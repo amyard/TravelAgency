@@ -63,7 +63,48 @@ html {
       align-items: center; }
 
 .adventage {
-  background-color: aquamarine; }
+  display: grid;
+  grid-column: center-start / center-end;
+  grid-template-columns: repeat(3, minmax(3rem, 1fr));
+  grid-template-rows: 5rem repeat(2, 1fr) 5rem;
+  grid-gap: 3rem;
+  grid-row-gap: 2rem;
+  padding: 0 15rem;
+  background-image: url(../../img/nat-7.jpg), linear-gradient(to right bottom, #2998ff, #5643fa);
+  background-blend-mode: screen;
+  background-size: 100%;
+  max-height: 50rem;
+  height: 50rem; }
+  .adventage__title {
+    color: #282b2e;
+    text-decoration: underline;
+    font-style: italic;
+    grid-column: 1/-1;
+    text-align: center;
+    font-size: 3rem; }
+  .adventage__card {
+    background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)); }
+    .adventage__card--title {
+      padding: 2rem 0;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 1.4rem;
+      color: #fff;
+      text-align: center; }
+      .adventage__card--title-blue {
+        background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
+      .adventage__card--title-yellow {
+        background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+      .adventage__card--title-green {
+        background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
+    .adventage__card--content {
+      letter-spacing: 1px;
+      text-align: center;
+      padding: 2rem 1rem 0 1rem;
+      color: #fff;
+      text-shadow: 0 2rem 4rem #282b2e; }
 
 .advert-1 .prev, .advert-1 .next {
   font-size: 3rem;
@@ -238,7 +279,21 @@ html {
   background-color: blanchedalmond; }
 
 .feedback {
-  background-color: salmon; }
+  display: grid;
+  grid-column: center-start / center-end;
+  grid-template-columns: repeat(3, minmax(3rem, 1fr));
+  grid-template-rows: 5rem repeat(2, 1fr) 5rem;
+  grid-gap: 3rem;
+  grid-row-gap: 2rem;
+  max-height: 30rem;
+  height: 30rem; }
+  .feedback__title {
+    color: #ddae71;
+    text-decoration: underline;
+    font-style: italic;
+    grid-column: 1/-1;
+    text-align: center;
+    font-size: 3rem; }
 
 .follow-us {
   background-color: thistle; }
