@@ -3,4 +3,5 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'base.html', context = {'test':'LALALLALALAA'})
+    user = request.user
+    return render(request, 'base.html', context = {'test':'LALALLALALAA', 'user':user})

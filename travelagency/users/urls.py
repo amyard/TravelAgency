@@ -1,6 +1,10 @@
-from django.urls import path
-
+from django.urls import path, reverse_lazy
+from .views import CustomLoginView, CustomLogoutView, CustomRegistrationView
 
 app_name = 'users'
 
-urlpatterns = []
+urlpatterns = [
+    path('login/', CustomLoginView.as_view(), name='login'),
+    path('logout/', CustomLogoutView.as_view(next_page = reverse_lazy('tours:base_view')), name='logout'),
+    path('registration/', CustomRegistrationView.as_view(), name='registration'),
+]

@@ -41,7 +41,7 @@ DJANGO_APPS = [
 
 LOCAL_APPS = [
     'users.apps.UsersConfig',
-    'tours.apps.ToursConfig'
+    'tours.apps.ToursConfig',
 ]
 
 THIRD_PARTY_APPS = []
@@ -59,6 +59,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'settings.urls'
+AUTH_USER_MODEL = 'users.User'
 
 TEMPLATES = [
     {
@@ -81,7 +82,12 @@ WSGI_APPLICATION = 'settings.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 
 # Password validation
@@ -129,3 +135,7 @@ STATICFILES_DIRS = (
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+LOGIN_REDIRECT_URL = 'tours:base_view'
+LOGOUT_REDIRECT_URL = 'tours:base_view'
