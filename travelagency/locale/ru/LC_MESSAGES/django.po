@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-11 00:44+0300\n"
+"POT-Creation-Date: 2019-09-13 20:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,13 +20,30 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: settings/base.py:123
-msgid "English"
+#: location/models.py:18
+msgid "Country"
+msgstr ""
+
+#: location/models.py:19
+msgid "Countries"
 msgstr ""
 
 #: settings/base.py:124
+msgid "English"
+msgstr ""
+
+#: settings/base.py:125
+msgid "German"
+msgstr ""
+
+#: settings/base.py:126
 msgid "Russian"
 msgstr ""
+
+#: templates/base.html:59 tests/tours/tests_localisation.py:19
+#: tests/tours/tests_localisation.py:23 tests/tours/tests_localisation.py:27
+msgid "translate this"
+msgstr "Переведи это"
 
 #: users/models.py:55
 msgid "User"
@@ -36,5 +53,5 @@ msgstr ""
 msgid "Users"
 msgstr ""
 
-msgid "translate this"
-msgstr "Переведи это"
+#~ msgid "new test here"
+#~ msgstr "Новый тест тут типа"

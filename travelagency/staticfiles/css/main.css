@@ -20,3 +20,8 @@
     border: 1px solid black;
     margin-top: 20px;
 }
+
+.lang-form {
+    float: right;
+    margin: 10px;
+}

@@ -43,6 +43,7 @@ DJANGO_APPS = [
 LOCAL_APPS = [
     'users.apps.UsersConfig',
     'tours.apps.ToursConfig',
+    'location.apps.LocationConfig',
 ]
 
 THIRD_PARTY_APPS = []
@@ -117,10 +118,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 LANGUAGES = (
     ('en', _('English')),
+    ('de', _('German')),
     ('ru', _('Russian')),
 )
 
